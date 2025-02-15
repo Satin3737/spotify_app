@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_app/common/helpers/is_dark_mode.dart';
+import 'package:spotify_app/common/widgets/basic_app_bar.dart';
 import 'package:spotify_app/core/configs/assets/app_images.dart';
 import 'package:spotify_app/core/configs/assets/app_svg.dart';
 import 'package:spotify_app/core/configs/theme/app_colors.dart';
@@ -31,6 +32,7 @@ class AuthScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          BasicAppBar(),
           Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(AppSvg.topPattern),
@@ -43,9 +45,9 @@ class AuthScreen extends StatelessWidget {
             alignment: Alignment.bottomLeft,
             child: Image.asset(AppImages.authBg),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 32, right: 32, bottom: 64),
-            child: Center(
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 24, right: 24, bottom: 64),
               child: Column(
                 spacing: 56,
                 mainAxisAlignment: MainAxisAlignment.center,

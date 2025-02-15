@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_app/core/configs/assets/app_images.dart';
 import 'package:spotify_app/core/configs/assets/app_svg.dart';
 import 'package:spotify_app/core/configs/theme/app_colors.dart';
+import 'package:spotify_app/presentation/auth/pages/auth_screen.dart';
 import 'package:spotify_app/presentation/choose_mode/widgets/mode_button_block.dart';
 
 class ChooseModeScreen extends StatelessWidget {
@@ -10,7 +11,14 @@ class ChooseModeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void onContinue() {}
+    void onContinue() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const AuthScreen(),
+        ),
+      );
+    }
 
     return Scaffold(
       body: Container(
@@ -43,7 +51,7 @@ class ChooseModeScreen extends StatelessWidget {
                         Text(
                           'Choose Mode',
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: AppColors.white,
@@ -54,12 +62,12 @@ class ChooseModeScreen extends StatelessWidget {
                           spacing: 48,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            ModeButtonBlock(
+                            const ModeButtonBlock(
                               svgIcon: AppSvg.moonIcon,
                               label: 'Dark Mode',
                               mode: ThemeMode.dark,
                             ),
-                            ModeButtonBlock(
+                            const ModeButtonBlock(
                               svgIcon: AppSvg.sunIcon,
                               label: 'Light Mode',
                               mode: ThemeMode.light,

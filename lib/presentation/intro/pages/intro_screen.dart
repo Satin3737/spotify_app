@@ -14,7 +14,7 @@ class IntroScreen extends StatelessWidget {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const ChooseModeScreen(),
+          builder: (_) => const ChooseModeScreen(),
         ),
       );
     }
@@ -47,7 +47,7 @@ class IntroScreen extends StatelessWidget {
                     Text(
                       'Enjoy listening to music',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: AppColors.white,
@@ -56,7 +56,7 @@ class IntroScreen extends StatelessWidget {
                     ),
                     Text(
                       'Millions of songs at your fingertips with Spotify Premium for free for 3 months with a new account and a one-time payment',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: AppColors.grey,
                         height: 1.5,

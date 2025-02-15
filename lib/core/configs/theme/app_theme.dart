@@ -8,7 +8,7 @@ class AppTheme {
       foregroundColor: AppColors.white,
       minimumSize: const Size(double.infinity, 72),
       padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 32),
-      textStyle: TextStyle(
+      textStyle: const TextStyle(
         color: AppColors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -19,6 +19,21 @@ class AppTheme {
     ),
   );
 
+  static _textButtonTheme(Color color) {
+    return TextButtonThemeData(
+      style: TextButton.styleFrom(
+        minimumSize: const Size(double.infinity, 72),
+        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 32),
+        foregroundColor: color,
+        textStyle: TextStyle(
+          color: color,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
   static final _baseTheme = ThemeData(
     colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
     elevatedButtonTheme: _elevatedButtonTheme,
@@ -28,10 +43,12 @@ class AppTheme {
   static final lightTheme = _baseTheme.copyWith(
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.lightBg,
+    textButtonTheme: _textButtonTheme(AppColors.black),
   );
 
   static final darkTheme = _baseTheme.copyWith(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.darkBg,
+    textButtonTheme: _textButtonTheme(AppColors.white),
   );
 }

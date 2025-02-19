@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:spotify_app/common/helpers/is_dark_mode.dart';
 import 'package:spotify_app/common/widgets/basic_app_bar.dart';
 import 'package:spotify_app/core/configs/assets/app_images.dart';
 import 'package:spotify_app/core/configs/assets/app_svg.dart';
-import 'package:spotify_app/core/configs/theme/app_colors.dart';
+import 'package:spotify_app/core/configs/theme/app_texts.dart';
+import 'package:spotify_app/presentation/auth/pages/auth_form_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -12,19 +12,19 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void onRegister() {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => const Placeholder(),
+          builder: (_) => const AuthFormScreen(isRegister: true),
         ),
       );
     }
 
     void onSignIn() {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => const Placeholder(),
+          builder: (_) => const AuthFormScreen(isRegister: false),
         ),
       );
     }
@@ -62,24 +62,13 @@ class AuthScreen extends StatelessWidget {
                       Text(
                         'Enjoy listening to music',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: context.isDark
-                              ? AppColors.white
-                              : AppColors.black,
-                          height: 1,
-                        ),
+                        style: AppTexts.titleText(context),
                       ),
                       SizedBox(
                         width: 300,
                         child: Text(
                           'Spotify is a proprietary Swedish audio streaming and media services provider',
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: AppColors.grey,
-                            height: 1.5,
-                          ),
+                          style: AppTexts.descriptionText(),
                           textAlign: TextAlign.center,
                         ),
                       ),

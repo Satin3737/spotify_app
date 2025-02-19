@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_app/core/configs/assets/app_images.dart';
 import 'package:spotify_app/core/configs/assets/app_svg.dart';
 import 'package:spotify_app/core/configs/theme/app_colors.dart';
+import 'package:spotify_app/core/configs/theme/app_texts.dart';
 import 'package:spotify_app/presentation/auth/pages/auth_screen.dart';
 import 'package:spotify_app/presentation/choose_mode/widgets/mode_button_block.dart';
 
@@ -26,7 +27,7 @@ class ChooseModeScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(AppImages.chooseModeBg),
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           ),
         ),
         child: SafeArea(
@@ -51,11 +52,10 @@ class ChooseModeScreen extends StatelessWidget {
                         Text(
                           'Choose Mode',
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style: AppTexts.titleText(
+                            context,
                             fontSize: 20,
-                            fontWeight: FontWeight.bold,
                             color: AppColors.white,
-                            height: 1,
                           ),
                         ),
                         Row(

@@ -43,7 +43,7 @@ class ModeButtonBlock extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: currentMode == mode
                           ? AppColors.primary
-                          : Colors.transparent,
+                          : AppColors.transparent,
                     ),
                     child: const SizedBox(
                       width: 32,
@@ -57,11 +57,11 @@ class ModeButtonBlock extends StatelessWidget {
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
                       colors: [
-                        Colors.transparent,
-                        Colors.transparent,
+                        AppColors.transparent,
+                        AppColors.transparent,
                         currentMode == mode
                             ? AppColors.primary
-                            : Colors.transparent
+                            : AppColors.transparent
                       ],
                     ),
                   ),

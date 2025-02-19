@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:spotify_app/core/configs/assets/app_images.dart';
 import 'package:spotify_app/core/configs/assets/app_svg.dart';
 import 'package:spotify_app/core/configs/theme/app_colors.dart';
+import 'package:spotify_app/core/configs/theme/app_texts.dart';
 import 'package:spotify_app/presentation/choose_mode/pages/choose_mode_screen.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -25,7 +26,7 @@ class IntroScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(AppImages.introBg),
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           ),
         ),
         child: SafeArea(
@@ -47,20 +48,14 @@ class IntroScreen extends StatelessWidget {
                     Text(
                       'Enjoy listening to music',
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                      style: AppTexts.titleText(
+                        context,
                         color: AppColors.white,
-                        height: 1,
                       ),
                     ),
                     Text(
                       'Millions of songs at your fingertips with Spotify Premium for free for 3 months with a new account and a one-time payment',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: AppColors.grey,
-                        height: 1.5,
-                      ),
+                      style: AppTexts.descriptionText(),
                       textAlign: TextAlign.center,
                     ),
                     ElevatedButton(

@@ -13,4 +13,6 @@ class AppColors {
 
   static const darkBg = Color(0xFF1C1B1B);
   static const darkText = Color(0xFFE1E1E1);
+
+  static const transparent = Color(0x00000000);
 }

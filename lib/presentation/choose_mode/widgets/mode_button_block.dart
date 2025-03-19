@@ -7,16 +7,16 @@ import 'package:spotify_app/core/configs/theme/app_colors.dart';
 import 'package:spotify_app/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ModeButtonBlock extends StatelessWidget {
+  final String svgIcon;
+  final String label;
+  final ThemeMode mode;
+
   const ModeButtonBlock({
     super.key,
     required this.svgIcon,
     required this.label,
     required this.mode,
   });
-
-  final String svgIcon;
-  final String label;
-  final ThemeMode mode;
 
   @override
   Widget build(BuildContext context) {

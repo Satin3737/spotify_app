@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotify_app/core/configs/theme/app_texts.dart';
 import 'package:spotify_app/data/models/auth/login_user_request.dart';
 import 'package:spotify_app/domain/usecases/auth/login.dart';
-import 'package:spotify_app/presentation/root/pages/root_screen.dart';
+import 'package:spotify_app/presentation/home/pages/home_screen.dart';
 import 'package:spotify_app/service_locator.dart';
 
 class LoginForm extends StatefulWidget {
@@ -55,7 +55,7 @@ class _LoginFormState extends State<LoginForm> {
       ),
       (success) => Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (_) => const RootScreen()),
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
         (route) => false,
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotify_app/core/configs/theme/app_texts.dart';
 import 'package:spotify_app/data/models/auth/create_user_request.dart';
 import 'package:spotify_app/domain/usecases/auth/register.dart';
-import 'package:spotify_app/presentation/root/pages/root_screen.dart';
+import 'package:spotify_app/presentation/home/pages/home_screen.dart';
 import 'package:spotify_app/service_locator.dart';
 
 class RegisterForm extends StatefulWidget {
@@ -67,7 +67,7 @@ class _RegisterFormState extends State<RegisterForm> {
       ),
       (success) => Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (_) => const RootScreen()),
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
         (route) => false,
       ),
     );

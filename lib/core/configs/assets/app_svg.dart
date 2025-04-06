@@ -7,5 +7,5 @@ class AppSvg {
   static const String moonIcon = '${_basePath}moon$_format';
   static const String topPattern = '${_basePath}top_pattern$_format';
   static const String bottomPattern = '${_basePath}bottom_pattern$_format';
-  static const String homeTopCard = '${_basePath}home_top_card$_format';
+  static const String homeTopPattern = '${_basePath}home_top_pattern$_format';
 }

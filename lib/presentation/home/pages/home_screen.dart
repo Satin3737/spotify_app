@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:spotify_app/common/widgets/basic_app_bar.dart';
 import 'package:spotify_app/core/configs/assets/app_svg.dart';
 import 'package:spotify_app/presentation/home/widgets/home_artist_card.dart';
+import 'package:spotify_app/presentation/home/widgets/home_tabs.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,11 +19,12 @@ class HomeScreen extends StatelessWidget {
         hideBack: true,
       ),
       body: const SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+        padding: EdgeInsets.symmetric(vertical: 24),
         child: Column(
           spacing: 32,
           children: [
             HomeArtistCard(),
+            HomeTabs(),
           ],
         ),
       ),

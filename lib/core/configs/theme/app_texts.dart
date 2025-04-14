@@ -17,6 +17,20 @@ class AppTexts {
     );
   }
 
+  static TextStyle regularText(
+    BuildContext context, {
+    double? fontSize = 16,
+    double? height = 1.5,
+    Color? color,
+  }) {
+    return TextStyle(
+      fontSize: fontSize,
+      color: color ?? (context.isDark ? AppColors.white : AppColors.black),
+      fontWeight: FontWeight.w400,
+      height: height,
+    );
+  }
+
   static TextStyle descriptionText({double? fontSize = 16, Color? color}) {
     return TextStyle(
       fontSize: fontSize,

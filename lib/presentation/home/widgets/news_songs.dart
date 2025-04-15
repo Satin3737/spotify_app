@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spotify_app/common/helpers/is_dark_mode.dart';
-import 'package:spotify_app/core/configs/theme/app_colors.dart';
+import 'package:spotify_app/common/widgets/play_round_btn.dart';
 import 'package:spotify_app/core/configs/theme/app_texts.dart';
 import 'package:spotify_app/core/constants/app_urls.dart';
 import 'package:spotify_app/presentation/home/bloc/news_songs_cubit.dart';
@@ -51,29 +50,7 @@ class NewsSongs extends StatelessWidget {
                             ),
                             child: Align(
                               alignment: Alignment(0.9, 1.25),
-                              child: IconButton(
-                                style: IconButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                  fixedSize: const Size(32, 32),
-                                ),
-                                icon: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: context.isDark
-                                        ? Color(0xFF222222)
-                                        : Color(0xFFE8E8E8),
-                                  ),
-                                  child: Icon(
-                                    Icons.play_arrow_rounded,
-                                    size: 24,
-                                    color: context.isDark
-                                        ? AppColors.white
-                                        : AppColors.black,
-                                  ),
-                                ),
-                                onPressed: () {},
-                              ),
+                              child: PlayRoundBtn(onPress: () {}),
                             ),
                           ),
                         ),

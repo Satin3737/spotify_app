@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_app/common/widgets/play_round_btn.dart';
+import 'package:spotify_app/core/configs/assets/app_images.dart';
 import 'package:spotify_app/core/configs/theme/app_texts.dart';
 import 'package:spotify_app/core/constants/app_urls.dart';
 import 'package:spotify_app/presentation/home/bloc/news_songs_cubit.dart';
@@ -38,20 +39,27 @@ class NewsSongs extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(32),
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(
-                                  '${AppUrls.firestorage}${song.artist} - ${song.title}.jpg?${AppUrls.mediaAlt}',
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: double.infinity,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(32),
+                                ),
+                                child: FadeInImage.assetNetwork(
+                                  fit: BoxFit.cover,
+                                  placeholderFit: BoxFit.contain,
+                                  placeholder: AppImages.placeholder,
+                                  image:
+                                      '${AppUrls.firestorage}${song.artist} - ${song.title}.jpg?${AppUrls.mediaAlt}',
                                 ),
                               ),
-                            ),
-                            child: Align(
-                              alignment: Alignment(0.9, 1.25),
-                              child: PlayRoundBtn(onPress: () {}),
-                            ),
+                              Align(
+                                alignment: Alignment(0.9, 1.25),
+                                child: PlayRoundBtn(onPress: () {}),
+                              ),
+                            ],
                           ),
                         ),
                         Padding(
